@@ -9,13 +9,20 @@
 /* Begin PBXBuildFile section */
 		18FA21972BDA566B009DD86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA21962BDA566B009DD86F /* AppDelegate.swift */; };
 		18FA21992BDA566B009DD86F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA21982BDA566B009DD86F /* SceneDelegate.swift */; };
-		18FA219B2BDA566B009DD86F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA219A2BDA566B009DD86F /* ViewController.swift */; };
-		18FA219E2BDA566B009DD86F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18FA219C2BDA566B009DD86F /* Main.storyboard */; };
+		18FA219B2BDA566B009DD86F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA219A2BDA566B009DD86F /* HomeViewController.swift */; };
+		18FA219E2BDA566B009DD86F /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18FA219C2BDA566B009DD86F /* HomeViewController.storyboard */; };
 		18FA21A02BDA5673009DD86F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18FA219F2BDA5673009DD86F /* Assets.xcassets */; };
 		18FA21A32BDA5673009DD86F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18FA21A12BDA5673009DD86F /* LaunchScreen.storyboard */; };
 		18FA21AE2BDA5673009DD86F /* pokemon_wikiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA21AD2BDA5673009DD86F /* pokemon_wikiTests.swift */; };
 		18FA21B82BDA5673009DD86F /* pokemon_wikiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA21B72BDA5673009DD86F /* pokemon_wikiUITests.swift */; };
 		18FA21BA2BDA5673009DD86F /* pokemon_wikiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA21B92BDA5673009DD86F /* pokemon_wikiUITestsLaunchTests.swift */; };
+		18FA21CA2BDA595C009DD86F /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA21C92BDA595C009DD86F /* HomeInteractor.swift */; };
+		18FA21CC2BDA5964009DD86F /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA21CB2BDA5964009DD86F /* HomePresenter.swift */; };
+		18FA21CE2BDA596F009DD86F /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA21CD2BDA596F009DD86F /* HomeModel.swift */; };
+		18FA21D02BDA5978009DD86F /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA21CF2BDA5978009DD86F /* HomeRouter.swift */; };
+		18FA21D22BDA5981009DD86F /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA21D12BDA5981009DD86F /* HomeWorker.swift */; };
+		18FA21D72BDA68BD009DD86F /* PokemonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FA21D62BDA68BD009DD86F /* PokemonCell.xib */; };
+		18FA21D92BDA6A95009DD86F /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA21D82BDA6A95009DD86F /* PokemonCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +46,8 @@
 		18FA21932BDA566B009DD86F /* pokemon-wiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pokemon-wiki.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FA21962BDA566B009DD86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18FA21982BDA566B009DD86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		18FA219A2BDA566B009DD86F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		18FA219D2BDA566B009DD86F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18FA219A2BDA566B009DD86F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		18FA219D2BDA566B009DD86F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeViewController.storyboard; sourceTree = "<group>"; };
 		18FA219F2BDA5673009DD86F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18FA21A22BDA5673009DD86F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18FA21A42BDA5673009DD86F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +56,13 @@
 		18FA21B32BDA5673009DD86F /* pokemon-wikiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "pokemon-wikiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FA21B72BDA5673009DD86F /* pokemon_wikiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokemon_wikiUITests.swift; sourceTree = "<group>"; };
 		18FA21B92BDA5673009DD86F /* pokemon_wikiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokemon_wikiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		18FA21C92BDA595C009DD86F /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		18FA21CB2BDA5964009DD86F /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		18FA21CD2BDA596F009DD86F /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		18FA21CF2BDA5978009DD86F /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		18FA21D12BDA5981009DD86F /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
+		18FA21D62BDA68BD009DD86F /* PokemonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokemonCell.xib; sourceTree = "<group>"; };
+		18FA21D82BDA6A95009DD86F /* PokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +113,11 @@
 		18FA21952BDA566B009DD86F /* pokemon-wiki */ = {
 			isa = PBXGroup;
 			children = (
+				18FA21DA2BDA6E47009DD86F /* Model */,
+				18FA21C72BDA5880009DD86F /* Common */,
+				18FA21C62BDA5875009DD86F /* Scene */,
 				18FA21962BDA566B009DD86F /* AppDelegate.swift */,
 				18FA21982BDA566B009DD86F /* SceneDelegate.swift */,
-				18FA219A2BDA566B009DD86F /* ViewController.swift */,
-				18FA219C2BDA566B009DD86F /* Main.storyboard */,
 				18FA219F2BDA5673009DD86F /* Assets.xcassets */,
 				18FA21A12BDA5673009DD86F /* LaunchScreen.storyboard */,
 				18FA21A42BDA5673009DD86F /* Info.plist */,
@@ -125,6 +140,52 @@
 				18FA21B92BDA5673009DD86F /* pokemon_wikiUITestsLaunchTests.swift */,
 			);
 			path = "pokemon-wikiUITests";
+			sourceTree = "<group>";
+		};
+		18FA21C62BDA5875009DD86F /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				18FA21C82BDA58C6009DD86F /* Home */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		18FA21C72BDA5880009DD86F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		18FA21C82BDA58C6009DD86F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				18FA21D52BDA68A9009DD86F /* Cell */,
+				18FA219A2BDA566B009DD86F /* HomeViewController.swift */,
+				18FA219C2BDA566B009DD86F /* HomeViewController.storyboard */,
+				18FA21C92BDA595C009DD86F /* HomeInteractor.swift */,
+				18FA21CB2BDA5964009DD86F /* HomePresenter.swift */,
+				18FA21CD2BDA596F009DD86F /* HomeModel.swift */,
+				18FA21CF2BDA5978009DD86F /* HomeRouter.swift */,
+				18FA21D12BDA5981009DD86F /* HomeWorker.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		18FA21D52BDA68A9009DD86F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				18FA21D62BDA68BD009DD86F /* PokemonCell.xib */,
+				18FA21D82BDA6A95009DD86F /* PokemonCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		18FA21DA2BDA6E47009DD86F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,8 +293,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				18FA21A32BDA5673009DD86F /* LaunchScreen.storyboard in Resources */,
+				18FA21D72BDA68BD009DD86F /* PokemonCell.xib in Resources */,
 				18FA21A02BDA5673009DD86F /* Assets.xcassets in Resources */,
-				18FA219E2BDA566B009DD86F /* Main.storyboard in Resources */,
+				18FA219E2BDA566B009DD86F /* HomeViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +320,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18FA219B2BDA566B009DD86F /* ViewController.swift in Sources */,
+				18FA219B2BDA566B009DD86F /* HomeViewController.swift in Sources */,
 				18FA21972BDA566B009DD86F /* AppDelegate.swift in Sources */,
+				18FA21D02BDA5978009DD86F /* HomeRouter.swift in Sources */,
+				18FA21CE2BDA596F009DD86F /* HomeModel.swift in Sources */,
 				18FA21992BDA566B009DD86F /* SceneDelegate.swift in Sources */,
+				18FA21CC2BDA5964009DD86F /* HomePresenter.swift in Sources */,
+				18FA21D22BDA5981009DD86F /* HomeWorker.swift in Sources */,
+				18FA21CA2BDA595C009DD86F /* HomeInteractor.swift in Sources */,
+				18FA21D92BDA6A95009DD86F /* PokemonCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,12 +365,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		18FA219C2BDA566B009DD86F /* Main.storyboard */ = {
+		18FA219C2BDA566B009DD86F /* HomeViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				18FA219D2BDA566B009DD86F /* Base */,
 			);
-			name = Main.storyboard;
+			name = HomeViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		18FA21A12BDA5673009DD86F /* LaunchScreen.storyboard */ = {
@@ -447,7 +515,7 @@
 				INFOPLIST_FILE = "pokemon-wiki/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = HomeViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -475,7 +543,7 @@
 				INFOPLIST_FILE = "pokemon-wiki/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = HomeViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
