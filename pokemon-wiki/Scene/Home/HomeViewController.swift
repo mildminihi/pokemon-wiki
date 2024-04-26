@@ -36,8 +36,10 @@ class HomeViewController: UIViewController, HomeViewControllerInterface {
     private func configulation() {
         let interactor = HomeInteractor()
         let presenter = HomePresenter()
+        let worker = HomeWorker()
         presenter.viewController = self
         interactor.presenter = presenter
+        interactor.worker = worker
         self.interactor = interactor
         router = HomeRouter()
     }

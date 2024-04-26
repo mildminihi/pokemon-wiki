@@ -8,17 +8,13 @@
 import Foundation
 
 protocol HomePresenterInterface {
-    func presentPokemonList()
+    func presentPokemonList(response: HomeModel.FetchPokemonList.Response)
 }
 
 class HomePresenter: HomePresenterInterface {
     weak var viewController: HomeViewController?
     
-    func presentPokemonList() {
-        let mockData: [PokemonCellViewModel] = [PokemonCellViewModel(imageUrl: "", pokemonName: "eiei1"),
-                                                PokemonCellViewModel(imageUrl: "", pokemonName: "eiei2"),
-                                                PokemonCellViewModel(imageUrl: "", pokemonName: "eiei3"),
-                                                PokemonCellViewModel(imageUrl: "", pokemonName: "eiei4")]
-        viewController?.displayPokemonList(viewModel: HomeModel.FetchPokemonList.ViewModel(pokemonList: mockData))
+    func presentPokemonList(response: HomeModel.FetchPokemonList.Response) {
+        viewController?.displayPokemonList(viewModel: HomeModel.FetchPokemonList.ViewModel(pokemonList: response.pokemonList))
     }
 }
