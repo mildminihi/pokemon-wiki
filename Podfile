@@ -18,5 +18,6 @@ target 'pokemon-wiki' do
 
 pod 'Alamofire'
 pod 'lottie-ios'
+pod 'Kingfisher', '~> 7.11'
 
 end

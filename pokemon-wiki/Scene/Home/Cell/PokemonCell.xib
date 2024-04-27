@@ -24,13 +24,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="312" height="275"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCb-gi-tCV">
-                                <rect key="frame" x="16" y="247" width="280" height="12"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <rect key="frame" x="16" y="242" width="280" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
                             <constraint firstItem="DCb-gi-tCV" firstAttribute="leading" secondItem="vbX-42-JYr" secondAttribute="leading" constant="16" id="Ai6-o7-8au"/>
                             <constraint firstItem="G4B-nr-0nc" firstAttribute="leading" secondItem="vbX-42-JYr" secondAttribute="leading" id="Etf-d3-VxX"/>
@@ -51,6 +51,7 @@
             </collectionViewCellContentView>
             <size key="customSize" width="344" height="307"/>
             <connections>
+                <outlet property="containerView" destination="vbX-42-JYr" id="T7H-fX-xVn"/>
                 <outlet property="pokemonImage" destination="G4B-nr-0nc" id="Dil-av-jXK"/>
                 <outlet property="pokemonNameLabel" destination="DCb-gi-tCV" id="A33-2V-7NA"/>
             </connections>
@@ -58,8 +59,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

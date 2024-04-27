@@ -13,14 +13,7 @@ protocol HomeViewControllerInterface {
 
 class HomeViewController: BaseViewController, HomeViewControllerInterface {
     
-    @IBOutlet weak var collectionView: UICollectionView! {
-        didSet {
-            collectionView.dataSource = self
-            collectionView.delegate = self
-            let nib = UINib(nibName: "PokemonCell", bundle: nil)
-            collectionView.register(nib, forCellWithReuseIdentifier: PokemonCell.pokemonCellIdentifier)
-        }
-    }
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var emptyLabel: UILabel!
     
     var interactor: HomeInteractorInterface?
@@ -31,6 +24,7 @@ class HomeViewController: BaseViewController, HomeViewControllerInterface {
     override func viewDidLoad() {
         super.viewDidLoad()
         configulation()
+        setupCollectionView()
         interactor?.fetchPokemonList()
         view.showLoading()
     }
@@ -46,6 +40,13 @@ class HomeViewController: BaseViewController, HomeViewControllerInterface {
         router = HomeRouter()
     }
     
+    private func setupCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        let nib = UINib(nibName: "PokemonCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: PokemonCell.pokemonCellIdentifier)
+    }
+    
     func displayPokemonList(viewModel: HomeModel.FetchPokemonList.ViewModel) {
         view.hideLoading()
         if !viewModel.pokemonList.isEmpty {
@@ -57,7 +58,7 @@ class HomeViewController: BaseViewController, HomeViewControllerInterface {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pokemonList.count
     }
@@ -68,5 +69,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             for: indexPath) as? PokemonCell else { return UICollectionViewCell() }
         cell.setData(with: pokemonList[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = (collectionView.frame.width / 2) - 16
+        return CGSize(width: size, height: size)
     }
 }
