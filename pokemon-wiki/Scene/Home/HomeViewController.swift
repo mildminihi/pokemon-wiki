@@ -11,7 +11,7 @@ protocol HomeViewControllerInterface {
     func displayPokemonList(viewModel: HomeModel.FetchPokemonList.ViewModel)
 }
 
-class HomeViewController: UIViewController, HomeViewControllerInterface {
+class HomeViewController: BaseViewController, HomeViewControllerInterface {
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -21,6 +21,7 @@ class HomeViewController: UIViewController, HomeViewControllerInterface {
             collectionView.register(nib, forCellWithReuseIdentifier: PokemonCell.pokemonCellIdentifier)
         }
     }
+    @IBOutlet weak var emptyLabel: UILabel!
     
     var interactor: HomeInteractorInterface?
     var router: HomeRouterInterface?
@@ -31,6 +32,7 @@ class HomeViewController: UIViewController, HomeViewControllerInterface {
         super.viewDidLoad()
         configulation()
         interactor?.fetchPokemonList()
+        view.showLoading()
     }
     
     private func configulation() {
@@ -45,8 +47,13 @@ class HomeViewController: UIViewController, HomeViewControllerInterface {
     }
     
     func displayPokemonList(viewModel: HomeModel.FetchPokemonList.ViewModel) {
-        pokemonList = viewModel.pokemonList
-        collectionView.reloadData()
+        view.hideLoading()
+        if !viewModel.pokemonList.isEmpty {
+            emptyLabel.isHidden = true
+            collectionView.isHidden = false
+            pokemonList = viewModel.pokemonList
+            collectionView.reloadData()
+        }
     }
 }
 

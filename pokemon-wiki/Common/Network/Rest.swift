@@ -14,10 +14,15 @@ final class Rest {
     private init() {}
     
     func request<T: Decodable>(_ endPoint: EndPointConstant, method: HTTPMethod = .get, parameters: Parameters? = nil, headers: HTTPHeaders? = nil, completion: @escaping (Result<T, ResponseError>) -> Void) {
+        var urlString = ""
+        switch endPoint {
+        case .fullUrl(let url):
+            urlString = url
+        default: urlString = "https://pokeapi.co/api/v2/\(endPoint.stringValue)"
+        }
         
-        let url = "https://pokeapi.co/api/v2/\(endPoint)"
-        print("👾 EndPoint ---> \(url)")
-        AF.request(url, method: method, parameters: parameters, headers: headers)
+        print("👾 EndPoint ---> \(urlString)")
+        AF.request(urlString, method: method, parameters: parameters, headers: headers)
             .validate(statusCode: 200..<300)
             .responseDecodable(of: T.self) { response in
                 

@@ -17,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="auF-mi-kGn">
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="auF-mi-kGn">
                                 <rect key="frame" x="15" y="141" width="361" height="661"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vQT-8D-59u">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -115,21 +114,30 @@
                                     <constraint firstItem="QyT-6k-UB1" firstAttribute="leading" secondItem="vt9-04-KtP" secondAttribute="leading" constant="8" id="vu2-ze-kLE"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BlB-rK-DUH">
+                                <rect key="frame" x="152.33333333333334" y="415.66666666666669" width="88.666666666666657" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
                             <constraint firstItem="auF-mi-kGn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="4fj-Im-21U"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vt9-04-KtP" secondAttribute="trailing" constant="16" id="IbB-Qj-BNt"/>
+                            <constraint firstItem="BlB-rK-DUH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JBV-Vp-PM6"/>
                             <constraint firstItem="vt9-04-KtP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="W0h-3A-pV4"/>
                             <constraint firstItem="vt9-04-KtP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="dJX-mG-QJw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="auF-mi-kGn" secondAttribute="bottom" constant="16" id="dKJ-Rx-zOG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="auF-mi-kGn" secondAttribute="trailing" constant="16" id="hli-y6-ohc"/>
+                            <constraint firstItem="BlB-rK-DUH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r3F-z4-zw1"/>
                             <constraint firstItem="auF-mi-kGn" firstAttribute="top" secondItem="vt9-04-KtP" secondAttribute="bottom" constant="16" id="tkD-dq-YuW"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="auF-mi-kGn" id="nbL-sY-ZPM"/>
+                        <outlet property="emptyLabel" destination="BlB-rK-DUH" id="LcR-yY-ESU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -140,6 +148,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

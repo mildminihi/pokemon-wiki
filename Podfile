@@ -17,5 +17,6 @@ target 'pokemon-wiki' do
   end
 
 pod 'Alamofire'
+pod 'lottie-ios'
 
 end
