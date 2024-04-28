@@ -16,6 +16,11 @@ enum HomeModel {
         struct ViewModel {
             let pokemonList: [PokemonCellViewModel]
         }
+        
+        struct PokemonListViewModel {
+            let pokemonName: String
+            let urlDetail: String
+        }
     }
     
     enum ShowAlert {
@@ -33,6 +38,20 @@ enum HomeModel {
     enum ShowSearchSuggestion {
         struct Request {
             let text: String
+        }
+    }
+    
+    enum SelectPokemon {
+        struct Request {
+            let pokemonName: String
+        }
+        
+        struct Response {
+            let urlString: String
+        }
+        
+        struct ViewModel {
+            let urlString: String
         }
     }
 }

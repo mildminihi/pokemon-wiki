@@ -6,13 +6,18 @@
 //
 
 import Foundation
+import UIKit
 
 protocol HomeRouterInterface {
-    func navigateToPokemonDetail()
+    func navigateToPokemonDetail(urlDetail: String)
 }
 
 class HomeRouter: HomeRouterInterface {
-    func navigateToPokemonDetail() {
-        //navigate to pokemon detail
+    weak var viewController: UIViewController?
+    
+    func navigateToPokemonDetail(urlDetail: String) {
+        let destination = DetailViewController(nibName: "DetailViewController", bundle: nil)
+        destination.urlString = urlDetail
+        viewController?.navigationController?.pushViewController(destination, animated: true)
     }
 }

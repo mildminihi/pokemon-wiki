@@ -10,6 +10,7 @@ import Foundation
 protocol HomePresenterInterface {
     func presentPokemonList(response: HomeModel.FetchPokemonList.Response)
     func presentAlert(response: HomeModel.ShowAlert.Response)
+    func presentSelectPokemon(response: HomeModel.SelectPokemon.Response)
 }
 
 class HomePresenter: HomePresenterInterface {
@@ -21,5 +22,9 @@ class HomePresenter: HomePresenterInterface {
     
     func presentAlert(response: HomeModel.ShowAlert.Response) {
         viewController?.displayAlert(viewModel: HomeModel.ShowAlert.ViewModel(title: response.title, message: response.message))
+    }
+    
+    func presentSelectPokemon(response: HomeModel.SelectPokemon.Response) {
+        viewController?.displaySelectPokemon(viewModel: HomeModel.SelectPokemon.ViewModel(urlString: response.urlString))
     }
 }

@@ -14,11 +14,12 @@ struct PokemonDetailResponse: Codable {
     let stats: [StatElement]
     let types: [TypeElement]
     let weight: Int
+    let height: Int
 
     enum CodingKeys: String, CodingKey {
         case id
         case locationAreaEncounters = "location_area_encounters"
-        case name, sprites, stats, types, weight
+        case name, sprites, stats, types, weight, height
     }
 }
 

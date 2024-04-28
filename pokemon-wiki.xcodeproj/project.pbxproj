@@ -14,6 +14,13 @@
 		189B943B2BDE14A600E835AC /* TypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189B943A2BDE14A600E835AC /* TypeCell.xib */; };
 		189B943D2BDE164400E835AC /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B943C2BDE164400E835AC /* TypeCell.swift */; };
 		189B94402BDE16AC00E835AC /* PokemonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B943F2BDE16AC00E835AC /* PokemonType.swift */; };
+		189B94422BDE1AD500E835AC /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189B94412BDE1AD500E835AC /* DetailViewController.xib */; };
+		189B94442BDE217400E835AC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B94432BDE217400E835AC /* DetailViewController.swift */; };
+		189B94462BDE2E7500E835AC /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B94452BDE2E7500E835AC /* DetailInteractor.swift */; };
+		189B94482BDE2E7E00E835AC /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B94472BDE2E7E00E835AC /* DetailPresenter.swift */; };
+		189B944A2BDE2E8700E835AC /* DetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B94492BDE2E8700E835AC /* DetailWorker.swift */; };
+		189B944C2BDE2E9000E835AC /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B944B2BDE2E9000E835AC /* DetailModel.swift */; };
+		189B944E2BDE2E9A00E835AC /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B944D2BDE2E9A00E835AC /* DetailRouter.swift */; };
 		18A362C52BDD3AFE00A9A9F8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A362C42BDD3AFE00A9A9F8 /* BaseViewController.swift */; };
 		18A362C92BDD3B7B00A9A9F8 /* PokeballLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A362C82BDD3B7B00A9A9F8 /* PokeballLoading.swift */; };
 		18A362CC2BDD3C5300A9A9F8 /* PokeballLoading.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A362CB2BDD3C5300A9A9F8 /* PokeballLoading.xib */; };
@@ -65,6 +72,13 @@
 		189B943A2BDE14A600E835AC /* TypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeCell.xib; sourceTree = "<group>"; };
 		189B943C2BDE164400E835AC /* TypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
 		189B943F2BDE16AC00E835AC /* PokemonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonType.swift; sourceTree = "<group>"; };
+		189B94412BDE1AD500E835AC /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		189B94432BDE217400E835AC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		189B94452BDE2E7500E835AC /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		189B94472BDE2E7E00E835AC /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		189B94492BDE2E8700E835AC /* DetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorker.swift; sourceTree = "<group>"; };
+		189B944B2BDE2E9000E835AC /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		189B944D2BDE2E9A00E835AC /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
 		18A362C42BDD3AFE00A9A9F8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		18A362C82BDD3B7B00A9A9F8 /* PokeballLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeballLoading.swift; sourceTree = "<group>"; };
 		18A362CB2BDD3C5300A9A9F8 /* PokeballLoading.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokeballLoading.xib; sourceTree = "<group>"; };
@@ -132,6 +146,13 @@
 		189B94382BDE13D200E835AC /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				189B94412BDE1AD500E835AC /* DetailViewController.xib */,
+				189B94432BDE217400E835AC /* DetailViewController.swift */,
+				189B94452BDE2E7500E835AC /* DetailInteractor.swift */,
+				189B94472BDE2E7E00E835AC /* DetailPresenter.swift */,
+				189B94492BDE2E8700E835AC /* DetailWorker.swift */,
+				189B944B2BDE2E9000E835AC /* DetailModel.swift */,
+				189B944D2BDE2E9A00E835AC /* DetailRouter.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -432,6 +453,7 @@
 				18FA21A32BDA5673009DD86F /* LaunchScreen.storyboard in Resources */,
 				18A362CC2BDD3C5300A9A9F8 /* PokeballLoading.xib in Resources */,
 				18A362CF2BDD3DEC00A9A9F8 /* pokeballLoading.json in Resources */,
+				189B94422BDE1AD500E835AC /* DetailViewController.xib in Resources */,
 				18FA21D72BDA68BD009DD86F /* PokemonCell.xib in Resources */,
 				189B943B2BDE14A600E835AC /* TypeCell.xib in Resources */,
 				18FA21A02BDA5673009DD86F /* Assets.xcassets in Resources */,
@@ -565,14 +587,20 @@
 			files = (
 				18FA219B2BDA566B009DD86F /* HomeViewController.swift in Sources */,
 				18A362D12BDD45C400A9A9F8 /* PokemonDetailResponse.swift in Sources */,
+				189B944A2BDE2E8700E835AC /* DetailWorker.swift in Sources */,
 				18FA21972BDA566B009DD86F /* AppDelegate.swift in Sources */,
+				189B944C2BDE2E9000E835AC /* DetailModel.swift in Sources */,
 				18FA21D02BDA5978009DD86F /* HomeRouter.swift in Sources */,
 				18FA21CE2BDA596F009DD86F /* HomeModel.swift in Sources */,
+				189B94482BDE2E7E00E835AC /* DetailPresenter.swift in Sources */,
 				18FA21992BDA566B009DD86F /* SceneDelegate.swift in Sources */,
+				189B944E2BDE2E9A00E835AC /* DetailRouter.swift in Sources */,
 				18A362C52BDD3AFE00A9A9F8 /* BaseViewController.swift in Sources */,
 				18FA21CC2BDA5964009DD86F /* HomePresenter.swift in Sources */,
 				18FA21D22BDA5981009DD86F /* HomeWorker.swift in Sources */,
 				182C6A242BDC08FB00D7041F /* ResponseError.swift in Sources */,
+				189B94442BDE217400E835AC /* DetailViewController.swift in Sources */,
+				189B94462BDE2E7500E835AC /* DetailInteractor.swift in Sources */,
 				182C6A1E2BDC034900D7041F /* Rest.swift in Sources */,
 				18A362C92BDD3B7B00A9A9F8 /* PokeballLoading.swift in Sources */,
 				189B943D2BDE164400E835AC /* TypeCell.swift in Sources */,

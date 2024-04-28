@@ -10,6 +10,7 @@ import UIKit
 protocol HomeViewControllerInterface {
     func displayPokemonList(viewModel: HomeModel.FetchPokemonList.ViewModel)
     func displayAlert(viewModel: HomeModel.ShowAlert.ViewModel)
+    func displaySelectPokemon(viewModel: HomeModel.SelectPokemon.ViewModel)
 }
 
 class HomeViewController: BaseViewController, HomeViewControllerInterface {
@@ -27,26 +28,32 @@ class HomeViewController: BaseViewController, HomeViewControllerInterface {
     override func viewDidLoad() {
         super.viewDidLoad()
         configulation()
-        setupCollectionView()
+        setupView()
         interactor?.fetchPokemonList()
         view.showLoading()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     private func configulation() {
         let interactor = HomeInteractor()
         let presenter = HomePresenter()
         let worker = HomeWorker()
+        let router = HomeRouter()
         presenter.viewController = self
         interactor.presenter = presenter
         interactor.worker = worker
+        router.viewController = self
         self.interactor = interactor
-        router = HomeRouter()
+        self.router = router
     }
     
-    private func setupCollectionView() {
+    private func setupView() {
         searchTextField.delegate = self
-        collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.dataSource = self
         let nib = UINib(nibName: "PokemonCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: PokemonCell.identifier)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -70,11 +77,16 @@ class HomeViewController: BaseViewController, HomeViewControllerInterface {
             pokemonList = []
             collectionView.reloadData()
         }
+        view.layoutIfNeeded()
     }
     
     func displayAlert(viewModel: HomeModel.ShowAlert.ViewModel) {
         showAlert(title: viewModel.title, message: viewModel.message)
         view.hideLoading()
+    }
+    
+    func displaySelectPokemon(viewModel: HomeModel.SelectPokemon.ViewModel) {
+        router?.navigateToPokemonDetail(urlDetail: viewModel.urlString)
     }
 }
 
@@ -101,6 +113,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             interactor?.loadMorePokemon()
             view.showLoading()
         }
+    }
+     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        interactor?.didSelectPokemon(request: HomeModel.SelectPokemon.Request(pokemonName: pokemonList[indexPath.row].pokemonName))
     }
 }
 

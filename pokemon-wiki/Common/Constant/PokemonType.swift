@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum PokemonType {
+enum PokemonType: String {
     case normal
     case fire
     case fighting
@@ -41,7 +41,7 @@ enum PokemonType {
         case .flying:
             return "Flying"
         case .grass:
-            return "grass"
+            return "Grass"
         case .poison:
             return "Poison"
         case .electric:
