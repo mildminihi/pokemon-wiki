@@ -20,12 +20,7 @@ class DetailViewController: BaseViewController, DetailViewControllerInterface {
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var typeCollectionView: UICollectionView!
-    @IBOutlet weak var hpLabel: UILabel!
-    @IBOutlet weak var attackLabel: UILabel!
-    @IBOutlet weak var defenseLabel: UILabel!
-    @IBOutlet weak var spAttackLabel: UILabel!
-    @IBOutlet weak var spDefenseLabel: UILabel!
-    @IBOutlet weak var speedLabel: UILabel!
+    @IBOutlet weak var statChart: PieChartView!
     
     var typeList: [PokemonType] = []
     var interactor: DetailInteractorInterface?
@@ -54,6 +49,7 @@ class DetailViewController: BaseViewController, DetailViewControllerInterface {
         typeCollectionView.delegate = self
         let nib = UINib(nibName: "TypeCell", bundle: nil)
         typeCollectionView.register(nib, forCellWithReuseIdentifier: TypeCell.identifier)
+        statChart.drawHoleEnabled = true
     }
     
     func displayPokemonDetail(viewModel: DetailModel.GetPokemonDetail.ViewModel) {
@@ -65,6 +61,22 @@ class DetailViewController: BaseViewController, DetailViewControllerInterface {
         typeCollectionView.reloadData()
         let url = URL(string: viewModel.model.imageUrl)
         pokemonImage.kf.setImage(with: url)
+        setupStatChart(statList: viewModel.model.stat)
+    }
+    
+    private func setupStatChart(statList: [DetailModel.GetPokemonDetail.StatDetail]) {
+        let entries: [PieChartDataEntry] = statList.map { stat in
+            return PieChartDataEntry(value: Double(stat.value), label: stat.statName)
+        }
+        let set = PieChartDataSet(entries: entries)
+        set.colors = ChartColorTemplates.colorful()
+        set.colors.append(NSUIColor(red: 54/255.0, green: 96/255.0, blue: 179/255.0, alpha: 1.0))
+        set.drawValuesEnabled = false
+        let data = PieChartData(dataSet: set)
+        statChart.drawCenterTextEnabled = true
+        statChart.chartDescription.enabled = false
+        statChart.centerText = "Stat"
+        statChart.data = data
     }
 }
 

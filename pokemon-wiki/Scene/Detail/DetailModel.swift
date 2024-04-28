@@ -28,6 +28,12 @@ enum DetailModel {
             let type: [PokemonType]
             let weight: Int
             let height: Int
+            let stat: [StatDetail]
+        }
+        
+        struct StatDetail {
+            let statName: String
+            let value: Int
         }
     }
 }

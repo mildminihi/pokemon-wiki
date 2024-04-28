@@ -18,29 +18,30 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvl-lX-B1z">
-                        <rect key="frame" x="0.0" y="0.0" width="294" height="117"/>
+                        <rect key="frame" x="8" y="8" width="278" height="101"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4N1-gg-ljJ">
-                                <rect key="frame" x="16" y="0.0" width="262" height="117"/>
+                                <rect key="frame" x="120.33333333333333" y="0.0" width="37.333333333333329" height="101"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstItem="4N1-gg-ljJ" firstAttribute="top" secondItem="lvl-lX-B1z" secondAttribute="top" id="137-8e-j4V"/>
-                            <constraint firstAttribute="trailing" secondItem="4N1-gg-ljJ" secondAttribute="trailing" constant="16" id="6Zv-Oj-LpK"/>
-                            <constraint firstItem="4N1-gg-ljJ" firstAttribute="leading" secondItem="lvl-lX-B1z" secondAttribute="leading" constant="16" id="XN8-85-CRO"/>
+                            <constraint firstItem="4N1-gg-ljJ" firstAttribute="centerX" secondItem="lvl-lX-B1z" secondAttribute="centerX" id="1L6-u2-0wD"/>
+                            <constraint firstItem="4N1-gg-ljJ" firstAttribute="centerY" secondItem="lvl-lX-B1z" secondAttribute="centerY" id="Sgk-qs-OCO"/>
                             <constraint firstAttribute="bottom" secondItem="4N1-gg-ljJ" secondAttribute="bottom" id="vE1-jo-JXi"/>
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="lvl-lX-B1z" secondAttribute="trailing" id="6AS-NF-hmp"/>
-                    <constraint firstAttribute="bottom" secondItem="lvl-lX-B1z" secondAttribute="bottom" id="H6m-QC-KoH"/>
-                    <constraint firstItem="lvl-lX-B1z" firstAttribute="leading" secondItem="TkJ-r1-3uV" secondAttribute="leading" id="X51-Ii-9gZ"/>
-                    <constraint firstItem="lvl-lX-B1z" firstAttribute="top" secondItem="TkJ-r1-3uV" secondAttribute="top" id="hQh-MS-pms"/>
+                    <constraint firstAttribute="trailing" secondItem="lvl-lX-B1z" secondAttribute="trailing" constant="8" id="6AS-NF-hmp"/>
+                    <constraint firstAttribute="bottom" secondItem="lvl-lX-B1z" secondAttribute="bottom" constant="8" id="H6m-QC-KoH"/>
+                    <constraint firstItem="lvl-lX-B1z" firstAttribute="leading" secondItem="TkJ-r1-3uV" secondAttribute="leading" constant="8" id="X51-Ii-9gZ"/>
+                    <constraint firstItem="lvl-lX-B1z" firstAttribute="top" secondItem="TkJ-r1-3uV" secondAttribute="top" constant="8" id="hQh-MS-pms"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="294" height="117"/>
@@ -52,8 +53,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
