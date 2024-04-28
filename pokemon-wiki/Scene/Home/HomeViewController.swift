@@ -10,7 +10,6 @@ import UIKit
 protocol HomeViewControllerInterface {
     func displayPokemonList(viewModel: HomeModel.FetchPokemonList.ViewModel)
     func displayAlert(viewModel: HomeModel.ShowAlert.ViewModel)
-    func displaySearchSuggestion(viewModel: HomeModel.ShowSearchSuggestion.ViewModel)
 }
 
 class HomeViewController: BaseViewController, HomeViewControllerInterface {
@@ -49,7 +48,7 @@ class HomeViewController: BaseViewController, HomeViewControllerInterface {
         collectionView.dataSource = self
         collectionView.delegate = self
         let nib = UINib(nibName: "PokemonCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: PokemonCell.pokemonCellIdentifier)
+        collectionView.register(nib, forCellWithReuseIdentifier: PokemonCell.identifier)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
     }
@@ -65,18 +64,17 @@ class HomeViewController: BaseViewController, HomeViewControllerInterface {
             collectionView.isHidden = false
             pokemonList = viewModel.pokemonList
             collectionView.reloadData()
+        } else {
+            emptyLabel.isHidden = false
+            collectionView.isHidden = true
+            pokemonList = []
+            collectionView.reloadData()
         }
     }
     
     func displayAlert(viewModel: HomeModel.ShowAlert.ViewModel) {
         showAlert(title: viewModel.title, message: viewModel.message)
         view.hideLoading()
-    }
-    
-    func displaySearchSuggestion(viewModel: HomeModel.ShowSearchSuggestion.ViewModel) {
-        if let suggest = viewModel.text {
-            searchTextField.text = viewModel.text
-        }
     }
 }
 
@@ -87,7 +85,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: PokemonCell.pokemonCellIdentifier,
+            withReuseIdentifier: PokemonCell.identifier,
             for: indexPath) as? PokemonCell else { return UICollectionViewCell() }
         cell.setData(with: pokemonList[indexPath.row])
         return cell

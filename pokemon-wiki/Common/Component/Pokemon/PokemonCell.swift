@@ -15,7 +15,7 @@ struct PokemonCellViewModel {
 }
 
 class PokemonCell: UICollectionViewCell {
-    static let pokemonCellIdentifier = "PokemonCell"
+    static let identifier = "PokemonCell"
     
     @IBOutlet weak var pokemonImage: UIImageView!
     @IBOutlet weak var pokemonNameLabel: UILabel!

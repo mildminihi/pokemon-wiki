@@ -34,13 +34,5 @@ enum HomeModel {
         struct Request {
             let text: String
         }
-        
-        struct Response {
-            let text: String?
-        }
-        
-        struct ViewModel {
-            let text: String?
-        }
     }
 }
