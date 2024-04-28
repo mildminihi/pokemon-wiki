@@ -17,4 +17,30 @@ enum HomeModel {
             let pokemonList: [PokemonCellViewModel]
         }
     }
+    
+    enum ShowAlert {
+        struct Response {
+            let title: String
+            let message: String
+        }
+        
+        struct ViewModel {
+            let title: String
+            let message: String
+        }
+    }
+    
+    enum ShowSearchSuggestion {
+        struct Request {
+            let text: String
+        }
+        
+        struct Response {
+            let text: String?
+        }
+        
+        struct ViewModel {
+            let text: String?
+        }
+    }
 }

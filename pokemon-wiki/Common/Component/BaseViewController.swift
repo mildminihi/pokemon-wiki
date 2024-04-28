@@ -13,6 +13,15 @@ open class BaseViewController: UIViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    public func showAlert(title: String?, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "ok", style: .default)
+        alert.addAction(action)
+        present(alert, animated: true) {
+            self.view.hideLoading()
+        }
+    }
 }
 
 extension UIView {

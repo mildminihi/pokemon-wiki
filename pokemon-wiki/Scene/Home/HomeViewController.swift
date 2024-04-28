@@ -9,17 +9,21 @@ import UIKit
 
 protocol HomeViewControllerInterface {
     func displayPokemonList(viewModel: HomeModel.FetchPokemonList.ViewModel)
+    func displayAlert(viewModel: HomeModel.ShowAlert.ViewModel)
+    func displaySearchSuggestion(viewModel: HomeModel.ShowSearchSuggestion.ViewModel)
 }
 
 class HomeViewController: BaseViewController, HomeViewControllerInterface {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var emptyLabel: UILabel!
+    @IBOutlet weak var searchTextField: UITextField!
     
     var interactor: HomeInteractorInterface?
     var router: HomeRouterInterface?
     
     var pokemonList: [PokemonCellViewModel] = []
+    var isSearch: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +45,17 @@ class HomeViewController: BaseViewController, HomeViewControllerInterface {
     }
     
     private func setupCollectionView() {
+        searchTextField.delegate = self
         collectionView.dataSource = self
         collectionView.delegate = self
         let nib = UINib(nibName: "PokemonCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: PokemonCell.pokemonCellIdentifier)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     func displayPokemonList(viewModel: HomeModel.FetchPokemonList.ViewModel) {
@@ -54,6 +65,17 @@ class HomeViewController: BaseViewController, HomeViewControllerInterface {
             collectionView.isHidden = false
             pokemonList = viewModel.pokemonList
             collectionView.reloadData()
+        }
+    }
+    
+    func displayAlert(viewModel: HomeModel.ShowAlert.ViewModel) {
+        showAlert(title: viewModel.title, message: viewModel.message)
+        view.hideLoading()
+    }
+    
+    func displaySearchSuggestion(viewModel: HomeModel.ShowSearchSuggestion.ViewModel) {
+        if let suggest = viewModel.text {
+            searchTextField.text = viewModel.text
         }
     }
 }
@@ -74,5 +96,33 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = (collectionView.frame.width / 2) - 16
         return CGSize(width: size, height: size)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == pokemonList.count - 2 && !isSearch {
+            interactor?.loadMorePokemon()
+            view.showLoading()
+        }
+    }
+}
+
+extension HomeViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        let newText = (text as NSString).replacingCharacters(in: range, with: string)
+        if newText.isEmpty {
+            isSearch = false
+            interactor?.clearSearch()
+        }
+        if newText.count >= 3 {
+            isSearch = true
+            interactor?.searchSuggestion(request: HomeModel.ShowSearchSuggestion.Request(text: newText))
+        }
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

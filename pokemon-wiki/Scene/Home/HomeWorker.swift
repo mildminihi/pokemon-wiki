@@ -8,13 +8,13 @@
 import Foundation
 
 protocol HomeWorkerInterface {
-    func getPokemonList(offset: Int, completion: @escaping (Result<PokemonResponse, ResponseError>) -> Void)
+    func getAllPokemonList(offset: Int, completion: @escaping (Result<PokemonResponse, ResponseError>) -> Void)
     func getPokemonDetail(url: String, completion: @escaping (Result<PokemonDetailResponse, ResponseError>) -> Void)
 }
 
 class HomeWorker: HomeWorkerInterface {
-    func getPokemonList(offset: Int, completion: @escaping (Result<PokemonResponse, ResponseError>) -> Void) {
-        let parameters: [String: Any] = ["offset": offset, "limit": 20]
+    func getAllPokemonList(offset: Int, completion: @escaping (Result<PokemonResponse, ResponseError>) -> Void) {
+        let parameters: [String: Any] = ["offset": offset, "limit": 1302]
         Rest.shared.request(.pokemon(nil), parameters: parameters) { (result: Result<PokemonResponse, ResponseError>) in
             switch result {
             case .success(let result):
