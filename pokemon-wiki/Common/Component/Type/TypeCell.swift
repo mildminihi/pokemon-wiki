@@ -15,10 +15,9 @@ class TypeCell: UICollectionViewCell {
     @IBOutlet weak var typeLabel: UILabel!
     
     func setupType(type: PokemonType) {
-        containerView.backgroundColor = type.typeColor
-        containerView.layer.cornerRadius = 10
+        containerView.layer.cornerRadius = 30
         containerView.layer.masksToBounds = true
         typeLabel.text = type.stringValue
-        self.layoutIfNeeded()
+        containerView.backgroundColor = type.typeColor
     }
 }

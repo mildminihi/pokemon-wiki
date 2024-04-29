@@ -24,6 +24,7 @@ enum DetailModel {
         struct PokemonDetailViewModel {
             let name: String
             let imageUrl: String
+            let imageShinyUrl: String?
             let id: Int
             let type: [PokemonType]
             let weight: Int

@@ -72,41 +72,41 @@ enum PokemonType: String {
     var typeColor: UIColor {
         switch self {
         case .normal:
-            return UIColor(red: 159, green: 161, blue: 159, alpha: 1)
+            return UIColor(red: 159/255.0, green: 161/255.0, blue: 159/255.0, alpha: 1)
         case .fire:
-            return UIColor(red: 229, green: 40, blue: 41, alpha: 1)
+            return UIColor(red: 229/255.0, green: 40/255.0, blue: 41/255.0, alpha: 1)
         case .fighting:
-            return UIColor(red: 247, green: 128, blue: 2, alpha: 1)
+            return UIColor(red: 247/255.0, green: 128/255.0, blue: 2/255.0, alpha: 1)
         case .water:
-            return UIColor(red: 47, green: 128, blue: 239, alpha: 1)
+            return UIColor(red: 47/255.0, green: 128/255.0, blue: 239/255.0, alpha: 1)
         case .flying:
-            return UIColor(red: 129, green: 185, blue: 239, alpha: 1)
+            return UIColor(red: 129/255.0, green: 185/255.0, blue: 239/255.0, alpha: 1)
         case .grass:
-            return UIColor(red: 63, green: 161, blue: 40, alpha: 1)
+            return UIColor(red: 63/255.0, green: 161/255.0, blue: 40/255.0, alpha: 1)
         case .poison:
-            return UIColor(red: 145, green: 65, blue: 203, alpha: 1)
+            return UIColor(red: 145/255.0, green: 65/255.0, blue: 203/255.0, alpha: 1)
         case .electric:
-            return UIColor(red: 249, green: 192, blue: 1, alpha: 1)
+            return UIColor(red: 249/255.0, green: 192/255.0, blue: 1/255.0, alpha: 1)
         case .ground:
-            return UIColor(red: 145, green: 81, blue: 33, alpha: 1)
+            return UIColor(red: 145/255.0, green: 81/255.0, blue: 33/255.0, alpha: 1)
         case .psychic:
-            return UIColor(red: 239, green: 65, blue: 121, alpha: 1)
+            return UIColor(red: 239/255.0, green: 65/255.0, blue: 121/255.0, alpha: 1)
         case .rock:
-            return UIColor(red: 179, green: 169, blue: 129, alpha: 1)
+            return UIColor(red: 179/255.0, green: 169/255.0, blue: 129/255.0, alpha: 1)
         case .ice:
-            return UIColor(red: 68, green: 206, blue: 243, alpha: 1)
+            return UIColor(red: 68/255.0, green: 206/255.0, blue: 243/255.0, alpha: 1)
         case .bug:
-            return UIColor(red: 145, green: 161, blue: 27, alpha: 1)
+            return UIColor(red: 145/255.0, green: 161/255.0, blue: 27/255.0, alpha: 1)
         case .dragon:
-            return UIColor(red: 80, green: 95, blue: 226, alpha: 1)
+            return UIColor(red: 80/255.0, green: 95/255.0, blue: 226/255.0, alpha: 1)
         case .ghost:
-            return UIColor(red: 111, green: 64, blue: 112, alpha: 1)
+            return UIColor(red: 111/255.0, green: 64/255.0, blue: 112/255.0, alpha: 1)
         case .dark:
-            return UIColor(red: 99, green: 77, blue: 77, alpha: 1)
+            return UIColor(red: 99/255.0, green: 77/255.0, blue: 77/255.0, alpha: 1)
         case .steel:
-            return UIColor(red: 96, green: 161, blue: 184, alpha: 1)
+            return UIColor(red: 96/255.0, green: 161/255.0, blue: 184/255.0, alpha: 1)
         case .fairy:
-            return UIColor(red: 239, green: 112, blue: 139, alpha: 1)
+            return UIColor(red: 239/255.0, green: 112/255.0, blue: 139/255.0, alpha: 1)
         }
     }
 }

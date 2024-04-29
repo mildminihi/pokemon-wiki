@@ -13,6 +13,7 @@
                 <outlet property="heightLabel" destination="kPs-DZ-Pjl" id="eAM-X1-TAU"/>
                 <outlet property="pokemonImage" destination="AN9-Kx-ZVn" id="eGP-2j-C4E"/>
                 <outlet property="pokemonNameLabel" destination="mcz-w8-ZoW" id="ncZ-FG-bvP"/>
+                <outlet property="shinySwitch" destination="y2D-ga-866" id="xeK-Dq-L9T"/>
                 <outlet property="statChart" destination="9Mj-Br-ubp" id="Wry-2W-djv"/>
                 <outlet property="typeCollectionView" destination="bxp-Ov-IuE" id="mlQ-dB-Iua"/>
                 <outlet property="view" destination="mDp-PG-buV" id="1Uh-WD-0ya"/>
@@ -96,6 +97,9 @@
                                         <constraint firstAttribute="height" constant="300" id="LaZ-EZ-Q0F"/>
                                     </constraints>
                                 </view>
+                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y2D-ga-866">
+                                    <rect key="frame" x="279.66666666666669" y="163.66666666666666" width="51" height="31"/>
+                                </switch>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
@@ -112,6 +116,7 @@
                                 <constraint firstAttribute="trailing" secondItem="7fV-Bd-fiA" secondAttribute="trailing" constant="16" id="NlQ-ul-4ra"/>
                                 <constraint firstItem="AN9-Kx-ZVn" firstAttribute="centerX" secondItem="OHi-kc-B9G" secondAttribute="centerX" id="O2o-6c-s7N"/>
                                 <constraint firstAttribute="trailing" secondItem="9sD-ND-kf8" secondAttribute="trailing" constant="16" id="XFd-OR-e9V"/>
+                                <constraint firstItem="y2D-ga-866" firstAttribute="leading" secondItem="AN9-Kx-ZVn" secondAttribute="trailing" constant="8" id="f2l-hx-tAV"/>
                                 <constraint firstItem="mcz-w8-ZoW" firstAttribute="centerX" secondItem="OHi-kc-B9G" secondAttribute="centerX" id="gvU-27-6JG"/>
                                 <constraint firstItem="Hop-Xb-MBh" firstAttribute="leading" secondItem="OHi-kc-B9G" secondAttribute="leading" constant="16" id="hjW-Tt-d9l"/>
                                 <constraint firstItem="9sD-ND-kf8" firstAttribute="leading" secondItem="OHi-kc-B9G" secondAttribute="leading" constant="16" id="r67-un-8Fe"/>
@@ -119,6 +124,7 @@
                                 <constraint firstAttribute="trailing" secondItem="bxp-Ov-IuE" secondAttribute="trailing" constant="16" id="rhJ-uw-LxS"/>
                                 <constraint firstItem="9Mj-Br-ubp" firstAttribute="top" secondItem="7fV-Bd-fiA" secondAttribute="bottom" constant="8" id="scE-T5-yhX"/>
                                 <constraint firstAttribute="height" constant="1000" placeholder="YES" id="taH-4z-qbA"/>
+                                <constraint firstItem="y2D-ga-866" firstAttribute="bottom" secondItem="AN9-Kx-ZVn" secondAttribute="bottom" id="z7t-Aq-Vcf"/>
                             </constraints>
                         </view>
                     </subviews>

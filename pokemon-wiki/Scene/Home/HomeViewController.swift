@@ -51,12 +51,14 @@ class HomeViewController: BaseViewController, HomeViewControllerInterface {
     }
     
     private func setupView() {
+        self.title = "Home"
+        let nib = UINib(nibName: "PokemonCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: PokemonCell.identifier)
         searchTextField.delegate = self
         collectionView.delegate = self
         collectionView.dataSource = self
-        let nib = UINib(nibName: "PokemonCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: PokemonCell.identifier)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
     }
     
@@ -86,6 +88,7 @@ class HomeViewController: BaseViewController, HomeViewControllerInterface {
     }
     
     func displaySelectPokemon(viewModel: HomeModel.SelectPokemon.ViewModel) {
+        view.hideLoading()
         router?.navigateToPokemonDetail(urlDetail: viewModel.urlString)
     }
 }
@@ -116,6 +119,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
      
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        view.showLoading()
         interactor?.didSelectPokemon(request: HomeModel.SelectPokemon.Request(pokemonName: pokemonList[indexPath.row].pokemonName))
     }
 }

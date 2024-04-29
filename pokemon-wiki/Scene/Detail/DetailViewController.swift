@@ -21,6 +21,7 @@ class DetailViewController: BaseViewController, DetailViewControllerInterface {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var typeCollectionView: UICollectionView!
     @IBOutlet weak var statChart: PieChartView!
+    @IBOutlet var shinySwitch: UISwitch!
     
     var typeList: [PokemonType] = []
     var interactor: DetailInteractorInterface?
@@ -32,7 +33,17 @@ class DetailViewController: BaseViewController, DetailViewControllerInterface {
         configulation()
         interactor?.getPokemonDetail(urlString: urlString ?? "")
         view.showLoading()
+        shinySwitch = UISwitch()
+        shinySwitch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
     }
+    
+    @objc func switchValueChanged(_ sender: UISwitch) {
+           if sender.isOn {
+               print("Switch is ON")
+           } else {
+               print("Switch is OFF")
+           }
+       }
     
     private func configulation() {
         let interactor = DetailInteractor()
