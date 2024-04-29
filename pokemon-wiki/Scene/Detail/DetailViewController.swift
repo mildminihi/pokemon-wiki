@@ -21,11 +21,12 @@ class DetailViewController: BaseViewController, DetailViewControllerInterface {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var typeCollectionView: UICollectionView!
     @IBOutlet weak var statChart: PieChartView!
-    @IBOutlet var shinySwitch: UISwitch!
     
     var typeList: [PokemonType] = []
     var interactor: DetailInteractorInterface?
     var urlString: String?
+    var isShowShiny: Bool = false
+    var pokemonDetail: DetailModel.GetPokemonDetail.PokemonDetailViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,17 +34,7 @@ class DetailViewController: BaseViewController, DetailViewControllerInterface {
         configulation()
         interactor?.getPokemonDetail(urlString: urlString ?? "")
         view.showLoading()
-        shinySwitch = UISwitch()
-        shinySwitch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
     }
-    
-    @objc func switchValueChanged(_ sender: UISwitch) {
-           if sender.isOn {
-               print("Switch is ON")
-           } else {
-               print("Switch is OFF")
-           }
-       }
     
     private func configulation() {
         let interactor = DetailInteractor()
@@ -60,14 +51,38 @@ class DetailViewController: BaseViewController, DetailViewControllerInterface {
         typeCollectionView.delegate = self
         let nib = UINib(nibName: "TypeCell", bundle: nil)
         typeCollectionView.register(nib, forCellWithReuseIdentifier: TypeCell.identifier)
+        statChart.centerText = "Stat"
+        let centerText = NSMutableAttributedString(string: "Stat")
+        centerText.setAttributes([.font : UIFont(name: "ChalkboardSE-Bold", size: 24) ?? UIFont(), .foregroundColor: UIColor.white], range: NSRange(location: 0, length: centerText.length))
+        statChart.centerAttributedText = centerText
+        statChart.legend.enabled = false
+        statChart.drawCenterTextEnabled = true
+        statChart.chartDescription.enabled = false
+        statChart.centerTextRadiusPercent = 0.7
         statChart.drawHoleEnabled = true
+        statChart.holeColor = .clear
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        guard let shinyUrl = pokemonDetail?.imageShinyUrl, let normalUrl = pokemonDetail?.imageUrl else { return }
+        if motion == .motionShake {
+            if isShowShiny {
+                let url = URL(string: normalUrl)
+                pokemonImage.kf.setImage(with: url)
+            } else {
+                let url = URL(string: shinyUrl)
+                pokemonImage.kf.setImage(with: url)
+            }
+            isShowShiny = !isShowShiny
+        }
     }
     
     func displayPokemonDetail(viewModel: DetailModel.GetPokemonDetail.ViewModel) {
         view.hideLoading()
+        pokemonDetail = viewModel.model
         pokemonNameLabel.text = "\(viewModel.model.name) #\(viewModel.model.id)"
-        heightLabel.text = "Height: \(viewModel.model.height)"
-        weightLabel.text = "Weight: \(viewModel.model.weight)"
+        heightLabel.text = "Height: \(String(format: "%.2f", viewModel.model.height)) ft"
+        weightLabel.text = "Weight: \(String(format: "%.2f", viewModel.model.weight)) lbs"
         typeList = viewModel.model.type
         typeCollectionView.reloadData()
         let url = URL(string: viewModel.model.imageUrl)
@@ -84,14 +99,15 @@ class DetailViewController: BaseViewController, DetailViewControllerInterface {
         set.colors.append(NSUIColor(red: 54/255.0, green: 96/255.0, blue: 179/255.0, alpha: 1.0))
         set.drawValuesEnabled = false
         let data = PieChartData(dataSet: set)
-        statChart.drawCenterTextEnabled = true
-        statChart.chartDescription.enabled = false
-        statChart.centerText = "Stat"
+        data.setValueFont(UIFont(name: "ChalkboardSE-Bold", size: 12) ?? UIFont())
+        data.setValueTextColor(UIColor.white)
+        data.isHighlightEnabled = false
+        data.dataSet?.drawValuesEnabled = true
         statChart.data = data
     }
 }
 
-extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return typeList.count
     }
@@ -104,5 +120,7 @@ extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 50)
+    }
 }

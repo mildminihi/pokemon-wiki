@@ -27,8 +27,8 @@ enum DetailModel {
             let imageShinyUrl: String?
             let id: Int
             let type: [PokemonType]
-            let weight: Int
-            let height: Int
+            let weight: Double
+            let height: Double
             let stat: [StatDetail]
         }
         

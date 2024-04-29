@@ -26,7 +26,7 @@ class DetailPresenter: DetailPresenterInterface {
             }
             return DetailModel.GetPokemonDetail.StatDetail(statName: stat.stat.name.uppercased(), value: stat.baseStat)
         }
-        let viewModel = DetailModel.GetPokemonDetail.PokemonDetailViewModel(name: response.pokemonDetail.name, imageUrl: response.pokemonDetail.sprites.frontDefault ?? "", imageShinyUrl: response.pokemonDetail.sprites.frontShiny, id: response.pokemonDetail.id, type: typeList, weight: response.pokemonDetail.weight, height: response.pokemonDetail.height, stat: statList)
+        let viewModel = DetailModel.GetPokemonDetail.PokemonDetailViewModel(name: response.pokemonDetail.name, imageUrl: response.pokemonDetail.sprites.frontDefault ?? "", imageShinyUrl: response.pokemonDetail.sprites.frontShiny, id: response.pokemonDetail.id, type: typeList, weight: Double(response.pokemonDetail.weight) / 4.536, height: Double(response.pokemonDetail.height) / 3.048, stat: statList)
         viewController?.displayPokemonDetail(viewModel: DetailModel.GetPokemonDetail.ViewModel(model: viewModel))
     }
 }
