@@ -51,7 +51,7 @@ class HomeInteractor: HomeInteractorInterface, HomeInteractorDataStore {
             return
         }
         let pokemonListDisplayRange = Array(pokemonDetailList[currentOffset...currentOffset + 13])
-        currentOffset += 13
+        currentOffset += 14
         getPokemonDetail(pokemonList: pokemonListDisplayRange)
     }
     

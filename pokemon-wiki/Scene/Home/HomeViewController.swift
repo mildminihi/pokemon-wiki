@@ -18,6 +18,7 @@ class HomeViewController: BaseViewController, HomeViewControllerInterface {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var searchView: UIView!
     
     var interactor: HomeInteractorInterface?
     var router: HomeRouterInterface?
@@ -60,6 +61,15 @@ class HomeViewController: BaseViewController, HomeViewControllerInterface {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
+        collectionView.layer.cornerRadius = 5
+        collectionView.layer.masksToBounds =  true
+        searchView.layer.cornerRadius = 5
+        searchView.layer.masksToBounds = true
+        let attributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.lightGray,
+            NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 14) ?? UIFont()
+        ]
+        searchTextField.attributedPlaceholder = NSAttributedString(string: "Type Pokemon name", attributes:attributes)
     }
     
     @objc func dismissKeyboard() {
@@ -107,7 +117,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = (collectionView.frame.width / 2) - 16
+        let size = (collectionView.frame.width / 2) - 8
         return CGSize(width: size, height: size)
     }
     
@@ -133,6 +143,7 @@ extension HomeViewController: UITextFieldDelegate {
             interactor?.clearSearch()
         }
         if newText.count >= 3 {
+            view.showLoading()
             isSearch = true
             interactor?.searchSuggestion(request: HomeModel.ShowSearchSuggestion.Request(text: newText))
         }
