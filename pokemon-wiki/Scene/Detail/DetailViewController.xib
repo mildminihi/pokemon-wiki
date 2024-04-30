@@ -10,9 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="pokemon_wiki" customModuleProvider="target">
             <connections>
+                <outlet property="detailView" destination="TmB-8J-U6E" id="DlG-P4-F9z"/>
                 <outlet property="heightLabel" destination="kPs-DZ-Pjl" id="eAM-X1-TAU"/>
                 <outlet property="pokemonImage" destination="AN9-Kx-ZVn" id="eGP-2j-C4E"/>
-                <outlet property="pokemonNameLabel" destination="mcz-w8-ZoW" id="ncZ-FG-bvP"/>
                 <outlet property="statChart" destination="9Mj-Br-ubp" id="Wry-2W-djv"/>
                 <outlet property="typeCollectionView" destination="bxp-Ov-IuE" id="mlQ-dB-Iua"/>
                 <outlet property="view" destination="mDp-PG-buV" id="1Uh-WD-0ya"/>
@@ -30,89 +30,96 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OHi-kc-B9G">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcz-w8-ZoW">
-                                    <rect key="frame" x="116.33333333333333" y="8" width="160.33333333333337" height="34"/>
-                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="24"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AN9-Kx-ZVn">
-                                    <rect key="frame" x="121.66666666666669" y="50" width="150" height="150"/>
+                                    <rect key="frame" x="121.66666666666669" y="24" width="150" height="150"/>
+                                    <color key="backgroundColor" red="0.34509803919999998" green="0.34901960780000002" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="AN9-Kx-ZVn" secondAttribute="height" multiplier="1:1" id="Twc-m8-Tgf"/>
                                         <constraint firstAttribute="height" constant="150" id="k5e-pH-dC6"/>
                                         <constraint firstAttribute="width" constant="150" id="rDS-Pd-yAX"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sD-ND-kf8">
-                                    <rect key="frame" x="16" y="240.33333333333331" width="361" height="24.333333333333314"/>
-                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bxp-Ov-IuE">
-                                    <rect key="frame" x="16" y="272.66666666666669" width="361" height="46"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="46" id="k70-Rg-Yuu"/>
-                                    </constraints>
-                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H1J-bL-27y">
-                                        <size key="itemSize" width="128" height="128"/>
-                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    </collectionViewFlowLayout>
-                                    <connections>
-                                        <outlet property="dataSource" destination="-1" id="PnO-v0-ELt"/>
-                                        <outlet property="delegate" destination="-1" id="Wxk-WQ-t36"/>
-                                    </connections>
-                                </collectionView>
-                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hop-Xb-MBh">
-                                    <rect key="frame" x="16" y="208" width="361" height="24.333333333333343"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TmB-8J-U6E">
+                                    <rect key="frame" x="16" y="198.00000000000003" width="361" height="466.66666666666674"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height: 10 CM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPs-DZ-Pjl">
-                                            <rect key="frame" x="0.0" y="0.0" width="180.66666666666666" height="24.333333333333332"/>
-                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sD-ND-kf8">
+                                            <rect key="frame" x="8" y="15.999999999999998" width="345" height="24.333333333333329"/>
+                                            <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight: 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXn-Jc-7jG">
-                                            <rect key="frame" x="180.66666666666663" y="0.0" width="180.33333333333337" height="24.333333333333332"/>
-                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bxp-Ov-IuE">
+                                            <rect key="frame" x="8" y="48.333333333333314" width="345" height="46"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="46" id="k70-Rg-Yuu"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H1J-bL-27y">
+                                                <size key="itemSize" width="128" height="128"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <connections>
+                                                <outlet property="dataSource" destination="-1" id="PnO-v0-ELt"/>
+                                                <outlet property="delegate" destination="-1" id="Wxk-WQ-t36"/>
+                                            </connections>
+                                        </collectionView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hop-Xb-MBh">
+                                            <rect key="frame" x="20" y="110.33333333333331" width="321" height="24.333333333333343"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height: 10 CM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPs-DZ-Pjl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="160.66666666666666" height="24.333333333333332"/>
+                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight: 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXn-Jc-7jG">
+                                                    <rect key="frame" x="160.66666666666663" y="0.0" width="160.33333333333337" height="24.333333333333332"/>
+                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Mj-Br-ubp" customClass="PieChartView" customModule="Charts">
+                                            <rect key="frame" x="20" y="150.66666666666669" width="321" height="300"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="300" id="LaZ-EZ-Q0F"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
-                                </stackView>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Mj-Br-ubp" customClass="PieChartView" customModule="Charts">
-                                    <rect key="frame" x="16" y="326.66666666666669" width="361" height="300.00000000000006"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="300" id="LaZ-EZ-Q0F"/>
+                                        <constraint firstAttribute="trailing" secondItem="9Mj-Br-ubp" secondAttribute="trailing" constant="20" id="5Kk-lj-7tl"/>
+                                        <constraint firstItem="9Mj-Br-ubp" firstAttribute="top" secondItem="Hop-Xb-MBh" secondAttribute="bottom" constant="16" id="7SA-wg-vak"/>
+                                        <constraint firstItem="9sD-ND-kf8" firstAttribute="top" secondItem="TmB-8J-U6E" secondAttribute="top" constant="16" id="7oc-N1-OzH"/>
+                                        <constraint firstItem="Hop-Xb-MBh" firstAttribute="leading" secondItem="TmB-8J-U6E" secondAttribute="leading" constant="20" id="Jhf-0q-MJc"/>
+                                        <constraint firstItem="9sD-ND-kf8" firstAttribute="leading" secondItem="TmB-8J-U6E" secondAttribute="leading" constant="8" id="KDb-ZL-HaQ"/>
+                                        <constraint firstItem="9Mj-Br-ubp" firstAttribute="leading" secondItem="TmB-8J-U6E" secondAttribute="leading" constant="20" id="Nga-Fa-2XY"/>
+                                        <constraint firstAttribute="bottom" secondItem="9Mj-Br-ubp" secondAttribute="bottom" constant="16" id="SGV-lc-H9w"/>
+                                        <constraint firstItem="bxp-Ov-IuE" firstAttribute="leading" secondItem="TmB-8J-U6E" secondAttribute="leading" constant="8" id="SqM-FK-dKk"/>
+                                        <constraint firstItem="Hop-Xb-MBh" firstAttribute="top" secondItem="bxp-Ov-IuE" secondAttribute="bottom" constant="16" id="Wtz-8S-UOW"/>
+                                        <constraint firstAttribute="trailing" secondItem="Hop-Xb-MBh" secondAttribute="trailing" constant="20" id="dTl-WL-hHs"/>
+                                        <constraint firstAttribute="trailing" secondItem="9sD-ND-kf8" secondAttribute="trailing" constant="8" id="wYz-3N-yNm"/>
+                                        <constraint firstAttribute="trailing" secondItem="bxp-Ov-IuE" secondAttribute="trailing" constant="8" id="wlU-Rs-YGY"/>
+                                        <constraint firstItem="bxp-Ov-IuE" firstAttribute="top" secondItem="9sD-ND-kf8" secondAttribute="bottom" constant="8" id="xlf-Ah-wmx"/>
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="9Mj-Br-ubp" secondAttribute="trailing" constant="16" id="0v6-yh-jwa"/>
-                                <constraint firstItem="bxp-Ov-IuE" firstAttribute="leading" secondItem="OHi-kc-B9G" secondAttribute="leading" constant="16" id="1cb-Bn-ofN"/>
-                                <constraint firstItem="bxp-Ov-IuE" firstAttribute="top" secondItem="9sD-ND-kf8" secondAttribute="bottom" constant="8" id="4uX-rP-Qu1"/>
-                                <constraint firstItem="9sD-ND-kf8" firstAttribute="top" secondItem="Hop-Xb-MBh" secondAttribute="bottom" constant="8" id="682-KK-oIk"/>
-                                <constraint firstAttribute="trailing" secondItem="Hop-Xb-MBh" secondAttribute="trailing" constant="16" id="AhZ-2M-6EI"/>
-                                <constraint firstItem="Hop-Xb-MBh" firstAttribute="top" secondItem="AN9-Kx-ZVn" secondAttribute="bottom" constant="8" id="DCU-TH-Fj9"/>
-                                <constraint firstItem="mcz-w8-ZoW" firstAttribute="top" secondItem="OHi-kc-B9G" secondAttribute="top" constant="8" id="E2e-tg-96D"/>
-                                <constraint firstItem="9Mj-Br-ubp" firstAttribute="leading" secondItem="OHi-kc-B9G" secondAttribute="leading" constant="16" id="Jbi-lj-5bN"/>
-                                <constraint firstItem="AN9-Kx-ZVn" firstAttribute="top" secondItem="mcz-w8-ZoW" secondAttribute="bottom" constant="8" id="Lr8-8q-oUY"/>
                                 <constraint firstItem="AN9-Kx-ZVn" firstAttribute="centerX" secondItem="OHi-kc-B9G" secondAttribute="centerX" id="O2o-6c-s7N"/>
-                                <constraint firstAttribute="trailing" secondItem="9sD-ND-kf8" secondAttribute="trailing" constant="16" id="XFd-OR-e9V"/>
-                                <constraint firstItem="mcz-w8-ZoW" firstAttribute="centerX" secondItem="OHi-kc-B9G" secondAttribute="centerX" id="gvU-27-6JG"/>
-                                <constraint firstItem="Hop-Xb-MBh" firstAttribute="leading" secondItem="OHi-kc-B9G" secondAttribute="leading" constant="16" id="hjW-Tt-d9l"/>
-                                <constraint firstItem="9sD-ND-kf8" firstAttribute="leading" secondItem="OHi-kc-B9G" secondAttribute="leading" constant="16" id="r67-un-8Fe"/>
-                                <constraint firstAttribute="trailing" secondItem="bxp-Ov-IuE" secondAttribute="trailing" constant="16" id="rhJ-uw-LxS"/>
-                                <constraint firstItem="9Mj-Br-ubp" firstAttribute="top" secondItem="bxp-Ov-IuE" secondAttribute="bottom" constant="8" id="scE-T5-yhX"/>
+                                <constraint firstAttribute="trailing" secondItem="TmB-8J-U6E" secondAttribute="trailing" constant="16" id="Sup-E4-Htk"/>
+                                <constraint firstItem="AN9-Kx-ZVn" firstAttribute="top" secondItem="OHi-kc-B9G" secondAttribute="top" constant="24" id="a55-iJ-zOl"/>
+                                <constraint firstItem="TmB-8J-U6E" firstAttribute="leading" secondItem="OHi-kc-B9G" secondAttribute="leading" constant="16" id="ga3-wj-Wtr"/>
+                                <constraint firstItem="TmB-8J-U6E" firstAttribute="top" secondItem="AN9-Kx-ZVn" secondAttribute="bottom" constant="24" id="nqs-bM-tY3"/>
                                 <constraint firstAttribute="height" constant="1000" placeholder="YES" id="taH-4z-qbA"/>
                             </constraints>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="OHi-kc-B9G" firstAttribute="leading" secondItem="cgG-ZR-2VN" secondAttribute="leading" id="IuV-hV-QJR"/>
                         <constraint firstItem="OHi-kc-B9G" firstAttribute="bottom" secondItem="cgG-ZR-2VN" secondAttribute="bottom" id="NPI-ew-IYE"/>
@@ -123,7 +130,7 @@
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="BI9-db-ixK"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" red="0.83137254900000002" green="0.17254901959999999" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="cgG-ZR-2VN" firstAttribute="top" secondItem="BI9-db-ixK" secondAttribute="top" id="498-N2-ack"/>
                 <constraint firstItem="cgG-ZR-2VN" firstAttribute="leading" secondItem="BI9-db-ixK" secondAttribute="leading" id="CVQ-93-sXI"/>

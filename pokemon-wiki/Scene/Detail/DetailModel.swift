@@ -37,4 +37,16 @@ enum DetailModel {
             let value: Int
         }
     }
+    
+    enum ShowAlert {
+        struct Response {
+            let title: String
+            let message: String
+        }
+        
+        struct ViewModel {
+            let title: String
+            let message: String
+        }
+    }
 }

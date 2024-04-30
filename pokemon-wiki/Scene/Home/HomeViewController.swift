@@ -61,15 +61,13 @@ class HomeViewController: BaseViewController, HomeViewControllerInterface {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
-        collectionView.layer.cornerRadius = 5
-        collectionView.layer.masksToBounds =  true
-        searchView.layer.cornerRadius = 5
-        searchView.layer.masksToBounds = true
+        collectionView.setViewConner(5)
+        searchView.setViewConner(5)
         let attributes = [
             NSAttributedString.Key.foregroundColor: UIColor.lightGray,
             NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 14) ?? UIFont()
         ]
-        searchTextField.attributedPlaceholder = NSAttributedString(string: "Type Pokemon name", attributes:attributes)
+        searchTextField.attributedPlaceholder = NSAttributedString(string: "Type Poke'mon name", attributes:attributes)
     }
     
     @objc func dismissKeyboard() {
@@ -85,7 +83,7 @@ class HomeViewController: BaseViewController, HomeViewControllerInterface {
             collectionView.reloadData()
         } else {
             emptyLabel.isHidden = false
-            emptyLabel.text = "Not found pokemon"
+            emptyLabel.text = "Not found poke'mon"
             collectionView.isHidden = true
             pokemonList = []
             collectionView.reloadData()

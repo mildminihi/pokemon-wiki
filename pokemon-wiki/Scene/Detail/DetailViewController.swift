@@ -12,15 +12,16 @@ import Charts
 
 protocol DetailViewControllerInterface {
     func displayPokemonDetail(viewModel: DetailModel.GetPokemonDetail.ViewModel)
+    func displayAlert(viewModel: DetailModel.ShowAlert.ViewModel)
 }
 
 class DetailViewController: BaseViewController, DetailViewControllerInterface {
-    @IBOutlet weak var pokemonNameLabel: UILabel!
     @IBOutlet weak var pokemonImage: UIImageView!
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var typeCollectionView: UICollectionView!
     @IBOutlet weak var statChart: PieChartView!
+    @IBOutlet weak var detailView: UIView!
     
     var typeList: [PokemonType] = []
     var interactor: DetailInteractorInterface?
@@ -61,6 +62,11 @@ class DetailViewController: BaseViewController, DetailViewControllerInterface {
         statChart.centerTextRadiusPercent = 0.7
         statChart.drawHoleEnabled = true
         statChart.holeColor = .clear
+        pokemonImage.layer.borderWidth = 8
+        pokemonImage.layer.borderColor = UIColor(red: 241/255, green: 242/255, blue: 242/255, alpha: 1).cgColor
+        pokemonImage.setViewConner(20)
+        detailView.setViewConner(20)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
     }
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
@@ -80,7 +86,8 @@ class DetailViewController: BaseViewController, DetailViewControllerInterface {
     func displayPokemonDetail(viewModel: DetailModel.GetPokemonDetail.ViewModel) {
         view.hideLoading()
         pokemonDetail = viewModel.model
-        pokemonNameLabel.text = "\(viewModel.model.name) #\(viewModel.model.id)"
+        self.title = "\(viewModel.model.name) #\(viewModel.model.id)"
+        pokemonImage.layer.borderColor = viewModel.model.type.first?.typeColor.cgColor
         heightLabel.text = "Height: \(String(format: "%.2f", viewModel.model.height)) ft"
         weightLabel.text = "Weight: \(String(format: "%.2f", viewModel.model.weight)) lbs"
         typeList = viewModel.model.type
@@ -88,6 +95,10 @@ class DetailViewController: BaseViewController, DetailViewControllerInterface {
         let url = URL(string: viewModel.model.imageUrl)
         pokemonImage.kf.setImage(with: url)
         setupStatChart(statList: viewModel.model.stat)
+    }
+    
+    func displayAlert(viewModel: DetailModel.ShowAlert.ViewModel) {
+        showAlert(title: viewModel.title, message: viewModel.message)
     }
     
     private func setupStatChart(statList: [DetailModel.GetPokemonDetail.StatDetail]) {

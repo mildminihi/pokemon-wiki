@@ -23,7 +23,7 @@ class DetailInteractor: DetailInteractorInterface {
             case .success(let result):
                 self.presenter?.presentPokemonDetail(response: DetailModel.GetPokemonDetail.Response(pokemonDetail: result))
             case .failure(let failure):
-                print(failure)
+                self.presenter?.presentAlert(response: DetailModel.ShowAlert.Response(title: "error", message: failure.errorMessage ?? ""))
             }
         })
     }

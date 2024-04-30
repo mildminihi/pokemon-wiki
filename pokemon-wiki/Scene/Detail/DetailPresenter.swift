@@ -9,6 +9,7 @@ import Foundation
 
 protocol DetailPresenterInterface {
     func presentPokemonDetail(response: DetailModel.GetPokemonDetail.Response)
+    func presentAlert(response: DetailModel.ShowAlert.Response)
 }
 
 class DetailPresenter: DetailPresenterInterface {
@@ -28,5 +29,9 @@ class DetailPresenter: DetailPresenterInterface {
         }
         let viewModel = DetailModel.GetPokemonDetail.PokemonDetailViewModel(name: response.pokemonDetail.name, imageUrl: response.pokemonDetail.sprites.frontDefault ?? "", imageShinyUrl: response.pokemonDetail.sprites.frontShiny, id: response.pokemonDetail.id, type: typeList, weight: Double(response.pokemonDetail.weight) / 4.536, height: Double(response.pokemonDetail.height) / 3.048, stat: statList)
         viewController?.displayPokemonDetail(viewModel: DetailModel.GetPokemonDetail.ViewModel(model: viewModel))
+    }
+    
+    func presentAlert(response: DetailModel.ShowAlert.Response) {
+        viewController?.displayAlert(viewModel: DetailModel.ShowAlert.ViewModel(title: response.title, message: response.message))
     }
 }

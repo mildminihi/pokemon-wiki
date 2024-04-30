@@ -18,6 +18,8 @@ class HomeRouter: HomeRouterInterface {
     func navigateToPokemonDetail(urlDetail: String) {
         let destination = DetailViewController(nibName: "DetailViewController", bundle: nil)
         destination.urlString = urlDetail
+        viewController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
+        viewController?.navigationItem.backBarButtonItem?.tintColor = UIColor.white
         viewController?.navigationController?.pushViewController(destination, animated: true)
     }
 }

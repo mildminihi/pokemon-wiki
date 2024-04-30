@@ -16,10 +16,9 @@ class DetailWorker: DetailWorkerInterface {
         Rest.shared.request(.fullUrl(url: url)) { (result: Result<PokemonDetailResponse, ResponseError>) in
             switch result {
             case .success(let result):
-                print(result)
                 completion(.success(result))
             case .failure(let error):
-                print(error)
+                completion(.failure(error))
             }
         }
     }

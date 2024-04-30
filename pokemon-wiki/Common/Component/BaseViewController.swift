@@ -42,4 +42,9 @@ extension UIView {
         let loadingViews = self.subviews.filter { ($0 as? PokeballLoading) != nil }
         loadingViews.forEach { $0.removeFromSuperview() }
     }
+    
+    func setViewConner(_ point: CGFloat) {
+        self.layer.cornerRadius = point
+        self.layer.masksToBounds = true
+    }
 }
