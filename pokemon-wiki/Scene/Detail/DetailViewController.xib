@@ -33,6 +33,9 @@
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AN9-Kx-ZVn">
                                     <rect key="frame" x="121.66666666666669" y="24" width="150" height="150"/>
                                     <color key="backgroundColor" red="0.34509803919999998" green="0.34901960780000002" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="pokemonImg">
+                                        <bool key="isElement" value="YES"/>
+                                    </accessibility>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="AN9-Kx-ZVn" secondAttribute="height" multiplier="1:1" id="Twc-m8-Tgf"/>
                                         <constraint firstAttribute="height" constant="150" id="k5e-pH-dC6"/>
@@ -44,6 +47,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sD-ND-kf8">
                                             <rect key="frame" x="8" y="15.999999999999998" width="345" height="24.333333333333329"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="typeText"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -70,12 +74,14 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height: 10 CM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPs-DZ-Pjl">
                                                     <rect key="frame" x="0.0" y="0.0" width="160.66666666666666" height="24.333333333333332"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="heightText"/>
                                                     <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight: 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXn-Jc-7jG">
                                                     <rect key="frame" x="160.66666666666663" y="0.0" width="160.33333333333337" height="24.333333333333332"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="weightText"/>
                                                     <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -85,6 +91,9 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Mj-Br-ubp" customClass="PieChartView" customModule="Charts">
                                             <rect key="frame" x="20" y="150.66666666666669" width="321" height="300"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="pieChart">
+                                                <bool key="isElement" value="YES"/>
+                                            </accessibility>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="300" id="LaZ-EZ-Q0F"/>
                                             </constraints>
@@ -109,6 +118,9 @@
                                 </view>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <bool key="isElement" value="YES"/>
+                            </accessibility>
                             <constraints>
                                 <constraint firstItem="AN9-Kx-ZVn" firstAttribute="centerX" secondItem="OHi-kc-B9G" secondAttribute="centerX" id="O2o-6c-s7N"/>
                                 <constraint firstAttribute="trailing" secondItem="TmB-8J-U6E" secondAttribute="trailing" constant="16" id="Sup-E4-Htk"/>
@@ -131,6 +143,9 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="BI9-db-ixK"/>
             <color key="backgroundColor" red="0.83137254900000002" green="0.17254901959999999" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <accessibility key="accessibilityConfiguration">
+                <bool key="isElement" value="YES"/>
+            </accessibility>
             <constraints>
                 <constraint firstItem="cgG-ZR-2VN" firstAttribute="top" secondItem="BI9-db-ixK" secondAttribute="top" id="498-N2-ack"/>
                 <constraint firstItem="cgG-ZR-2VN" firstAttribute="leading" secondItem="BI9-db-ixK" secondAttribute="leading" id="CVQ-93-sXI"/>

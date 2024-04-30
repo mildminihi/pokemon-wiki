@@ -58,6 +58,7 @@ class HomeViewController: BaseViewController, HomeViewControllerInterface {
         searchTextField.delegate = self
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.accessibilityLabel = "pokemonCollectionView"
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)

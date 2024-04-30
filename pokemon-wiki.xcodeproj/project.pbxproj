@@ -37,7 +37,6 @@
 		18FA21A32BDA5673009DD86F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18FA21A12BDA5673009DD86F /* LaunchScreen.storyboard */; };
 		18FA21AE2BDA5673009DD86F /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA21AD2BDA5673009DD86F /* HomeInteractorTests.swift */; };
 		18FA21B82BDA5673009DD86F /* pokemon_wikiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA21B72BDA5673009DD86F /* pokemon_wikiUITests.swift */; };
-		18FA21BA2BDA5673009DD86F /* pokemon_wikiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA21B92BDA5673009DD86F /* pokemon_wikiUITestsLaunchTests.swift */; };
 		18FA21CA2BDA595C009DD86F /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA21C92BDA595C009DD86F /* HomeInteractor.swift */; };
 		18FA21CC2BDA5964009DD86F /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA21CB2BDA5964009DD86F /* HomePresenter.swift */; };
 		18FA21CE2BDA596F009DD86F /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA21CD2BDA596F009DD86F /* HomeModel.swift */; };
@@ -102,7 +101,6 @@
 		18FA21AD2BDA5673009DD86F /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
 		18FA21B32BDA5673009DD86F /* pokemon-wikiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "pokemon-wikiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FA21B72BDA5673009DD86F /* pokemon_wikiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokemon_wikiUITests.swift; sourceTree = "<group>"; };
-		18FA21B92BDA5673009DD86F /* pokemon_wikiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokemon_wikiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		18FA21C92BDA595C009DD86F /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		18FA21CB2BDA5964009DD86F /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		18FA21CD2BDA596F009DD86F /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -295,7 +293,6 @@
 			isa = PBXGroup;
 			children = (
 				18FA21B72BDA5673009DD86F /* pokemon_wikiUITests.swift */,
-				18FA21B92BDA5673009DD86F /* pokemon_wikiUITestsLaunchTests.swift */,
 			);
 			path = "pokemon-wikiUITests";
 			sourceTree = "<group>";
@@ -660,7 +657,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18FA21BA2BDA5673009DD86F /* pokemon_wikiUITestsLaunchTests.swift in Sources */,
 				18FA21B82BDA5673009DD86F /* pokemon_wikiUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
