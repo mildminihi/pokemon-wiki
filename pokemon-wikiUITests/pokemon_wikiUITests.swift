@@ -12,6 +12,7 @@ final class pokemon_wikiUITests: XCTestCase {
     // Home page
     let searchView = XCUIApplication().textFields["txtSearch"]
     let collectionView = XCUIApplication().collectionViews["pokemonCollectionView"]
+    let remarkText = XCUIApplication().staticTexts["remarkText"]
     // Detail page
     let navBarBulbasaur = XCUIApplication().navigationBars["bulbasaur #1"]
     
@@ -30,6 +31,14 @@ final class pokemon_wikiUITests: XCTestCase {
         searchView.typeText("bulbasaur")
         wait(for: [], timeout: 5)
         XCTAssertEqual(1, collectionView.cells.count)
+    }
+    
+    func testSearchNotFoundPokemon() {
+        testSeeHomePage()
+        searchView.tap()
+        searchView.typeText("tttttttttt")
+        wait(for: [], timeout: 5)
+        XCTAssertTrue(remarkText.exists)
     }
     
     func testTapOnFirstPokemon() {
