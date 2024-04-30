@@ -31,6 +31,7 @@ Pokemon-wiki requires [cocoapods](https://cocoapods.org) to run.
 ```sh
 pod install
 ```
+- open pokemon-wiki.xcworkspace and build 
 
 ## Testing
 - Pokemon-wiki include Unit test and UI Automation test using XCTest
