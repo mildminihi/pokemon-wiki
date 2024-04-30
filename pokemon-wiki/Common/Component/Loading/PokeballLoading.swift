@@ -29,9 +29,9 @@ class PokeballLoading: UIView {
         guard let view = loadViewFromNib() else { return }
         view.frame = self.bounds
         self.addSubview(view)
-        pokeballAnimation.animation          = LottieAnimation.named("pokeballLoading")
+        pokeballAnimation.animation = LottieAnimation.named("pokeballLoading")
         pokeballAnimation.backgroundBehavior = .pauseAndRestore
-        pokeballAnimation.loopMode           = .loop
+        pokeballAnimation.loopMode = .loop
 
     }
 

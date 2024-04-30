@@ -23,7 +23,6 @@ struct PokemonDetailResponse: Codable {
     }
 }
 
-// MARK: - Sprites
 struct Sprites: Codable {
     let backDefault, backFemale, backShiny, backShinyFemale: String?
     let frontDefault, frontFemale, frontShiny, frontShinyFemale: String?
@@ -40,7 +39,6 @@ struct Sprites: Codable {
     }
 }
 
-// MARK: - StatElement
 struct StatElement: Codable {
     let baseStat, effort: Int
     let stat: TypeClass
@@ -51,13 +49,11 @@ struct StatElement: Codable {
     }
 }
 
-// MARK: - TypeClass
 struct TypeClass: Codable {
     let name: String
     let url: String
 }
 
-// MARK: - TypeElement
 struct TypeElement: Codable {
     let slot: Int
     let type: TypeClass
