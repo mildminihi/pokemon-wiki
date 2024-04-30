@@ -13,7 +13,7 @@ protocol DetailPresenterInterface {
 }
 
 class DetailPresenter: DetailPresenterInterface {
-    weak var viewController: DetailViewController?
+    var viewController: DetailViewControllerInterface?
     
     func presentPokemonDetail(response: DetailModel.GetPokemonDetail.Response) {
         let typeList: [PokemonType] = response.pokemonDetail.types.map { type in

@@ -14,7 +14,7 @@ protocol HomePresenterInterface {
 }
 
 class HomePresenter: HomePresenterInterface {
-    weak var viewController: HomeViewController?
+    var viewController: HomeViewControllerInterface?
     
     func presentPokemonList(response: HomeModel.FetchPokemonList.Response) {
         viewController?.displayPokemonList(viewModel: HomeModel.FetchPokemonList.ViewModel(pokemonList: response.pokemonList))
