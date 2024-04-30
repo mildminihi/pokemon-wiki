@@ -12,8 +12,8 @@ protocol DetailInteractorInterface {
 }
 
 class DetailInteractor: DetailInteractorInterface {
-    var worker: DetailWorker?
-    var presenter: DetailPresenter?
+    var worker: DetailWorkerInterface?
+    var presenter: DetailPresenterInterface?
     
     var urlString: String?
     
