@@ -1,6 +1,7 @@
 # Pokemon-wiki
 Pokemon-wiki is a iOS App that can show list and detail of Pokemon using [PokeAPI](https://pokeapi.co)
 - Using clean architechture
+- Time spent 5 days
 
 <div> <img src="https://github.com/mildminihi/pokemon-wiki/blob/main/Screenshot/IMG_4077.PNG" alt="home" width="300"/>
 <img src="https://github.com/mildminihi/pokemon-wiki/blob/main/Screenshot/IMG_4078.PNG" alt="home" width="300"/>
