@@ -1,5 +1,12 @@
 # Pokemon-wiki
 
+<div> <img src="https://github.com/mildminihi/pokemon-wiki/blob/main/Screenshot/IMG_4077.PNG" alt="home" width="300"/>
+<img src="https://github.com/mildminihi/pokemon-wiki/blob/main/Screenshot/IMG_4078.PNG" alt="home" width="300"/>
+<img src="https://github.com/mildminihi/pokemon-wiki/blob/main/Screenshot/IMG_4081.PNG" alt="home" width="300"/>
+<img src="https://github.com/mildminihi/pokemon-wiki/blob/main/Screenshot/IMG_4079.PNG" alt="home" width="300"/>
+<img src="https://github.com/mildminihi/pokemon-wiki/blob/main/Screenshot/IMG_4080.PNG" alt="home" width="300"/>
+<img src="https://github.com/mildminihi/pokemon-wiki/blob/main/Screenshot/IMG_4082.PNG" alt="home" width="300"/> <div/>
+
 iOS App show list and detail of Pokemon using [PokeAPI](https://pokeapi.co)
 ## Features
 
