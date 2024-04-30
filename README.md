@@ -1,1 +1,27 @@
-# pokemon-wiki
+# Pokemon-wiki
+
+iOS App show list and detail of Pokemon using [PokeAPI](https://pokeapi.co)
+## Features
+
+- Show List of all Pokemon name and image
+- Search Pokemon by name
+- Show Detail of Pokemon such as type, stat, weight and height
+- Shake device on Pokemon detail page to see Pokemon in shiny form
+
+## Usage Library
+
+- [Alamofire](https://github.com/Alamofire/Alamofire) - Elegant networking on swift.
+- [KingFisher](https://github.com/onevcat/Kingfisher) - pure-Swift library for downloading and caching images from the web.
+- [Charts](https://github.com/ChartsOrg/Charts) - beautiful library to create charts for iOS.-
+
+## Installation
+
+Pokemon-wiki requires [cocoapods](https://cocoapods.org) to run.
+
+```sh
+pod install
+```
+
+## Testing
+- Pokemon-wiki include Unit test and UI Automation test using XCTest
+
