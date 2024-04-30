@@ -85,6 +85,7 @@ class HomeViewController: BaseViewController, HomeViewControllerInterface {
             collectionView.reloadData()
         } else {
             emptyLabel.isHidden = false
+            emptyLabel.text = "Not found pokemon"
             collectionView.isHidden = true
             pokemonList = []
             collectionView.reloadData()
